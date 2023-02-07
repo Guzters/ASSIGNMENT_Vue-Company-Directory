@@ -1,3 +1,3 @@
 <template>
-  <h1>Hello There</h1>
+  <span class="inline bg-yellow-700">I'm a Card</span>
 </template>

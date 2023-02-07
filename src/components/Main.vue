@@ -3,5 +3,14 @@ import MainSearch from './MainSearch.vue'
 </script>
 
 <template>
-  <MainSearch />
+  <div class="wrapper">
+    <MainSearch />
+    <h1>Hello There</h1>
+  </div>
 </template>
+
+<style scoped lang="postcss">
+.wrapper {
+  @apply container mx-auto flex flex-col gap-4 py-4;
+}
+</style>

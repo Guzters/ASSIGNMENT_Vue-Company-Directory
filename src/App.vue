@@ -1,8 +1,9 @@
 <script setup>
 import NavMenu from './components/NavMenu.vue'
+import Main from './components/Main.vue'
 </script>
 
 <template>
   <NavMenu />
-  <h1>Main Content</h1>
+  <Main />
 </template>

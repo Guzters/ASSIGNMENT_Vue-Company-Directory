@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 const pages = ref(10)
 const activePage = ref(4)
+
 const prevPage = () => {
   if (activePage.value > 1) {
     activePage.value--
@@ -17,7 +18,13 @@ const nextPage = () => {
 <template>
   <div class="pagination">
     <button class="action" :disabled="activePage === 1" @click="prevPage">Prev</button>
-    <button v-for="page in pages" class="page" :class="page === activePage ? 'active' : ''" @click="activePage = page">
+    <button
+      v-for="page in pages"
+      :key="page"
+      class="page"
+      :class="page === activePage ? 'active' : ''"
+      @click="activePage = page"
+    >
       {{ page }}
     </button>
     <button class="action" :disabled="activePage === pages" @click="nextPage">Next</button>

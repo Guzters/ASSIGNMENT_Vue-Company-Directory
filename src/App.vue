@@ -5,8 +5,5 @@ import MainPage from '@/components/MainPage.vue'
 
 <template>
   <NavMenu />
-  <MainPage v-if="showMainPage" />
-  <div v-else>
-    <h1>This is another "Page"</h1>
-  </div>
+  <MainPage />
 </template>

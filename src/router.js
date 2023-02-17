@@ -5,9 +5,9 @@ import LoginPage from '@/components/LoginPage.vue'
 import NotFound from '@/components/NotFound.vue'
 
 const routes = [
-  { path: '/', component: MainPage },
-  { path: '/login', component: LoginPage },
-  { path: '/:pathMatch(.*)*', component: NotFound },
+  { path: '/', name: 'Home', component: MainPage },
+  { path: '/login', name: 'Login', component: LoginPage },
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ]
 
 const router = createRouter({

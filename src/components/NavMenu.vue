@@ -6,7 +6,7 @@ const brand = ref('🏢Not Totally Fake Company Directory🐱‍👤')
 <template>
   <nav>
     <div class="wrapper">
-      <RouterLink to="/" class="brand">
+      <RouterLink :to="{ name: 'Home' }" class="brand">
         <span class="brand-title">{{ brand }}</span>
       </RouterLink>
       <div class="menu">

@@ -1,5 +1,9 @@
 <script setup>
 import { ref } from 'vue'
+import { useAuth } from '@/composables/useAuth'
+
+const { isAuthenticated, logout } = useAuth()
+
 const brand = ref('🏢Not Totally Fake Company Directory🐱‍👤')
 </script>
 
@@ -10,9 +14,13 @@ const brand = ref('🏢Not Totally Fake Company Directory🐱‍👤')
         <span class="brand-title">{{ brand }}</span>
       </RouterLink>
       <div class="menu">
-        <a href="#" class="menu-item">Departments</a>
-        <a href="#" class="menu-item">Settings</a>
-        <a href="#" class="menu-login">Logout</a>
+        <div v-if="isAuthenticated">
+          <RouterLink :to="{ name: 'Home' }" href="#" class="menu-item">Settings</RouterLink>
+          <button href="#" class="menu-logout" @click="logout">Logout</button>
+        </div>
+        <div v-else>
+          <RouterLink :to="{ name: 'Login' }" href="#" class="menu-login">Login</RouterLink>
+        </div>
       </div>
     </div>
   </nav>
@@ -20,7 +28,7 @@ const brand = ref('🏢Not Totally Fake Company Directory🐱‍👤')
 
 <style scoped lang="postcss">
 nav {
-  @apply h-20 bg-stone-800 text-slate-100;
+  @apply flex h-20 bg-stone-800 text-slate-100;
   .wrapper {
     @apply container mx-auto flex w-full items-center justify-between;
     .brand {
@@ -30,10 +38,16 @@ nav {
     }
     .menu {
       @apply flex gap-2;
+      & div {
+        @apply py-2;
+      }
       &-item {
         @apply rounded-md px-4 py-2 hover:bg-yellow-800 hover:text-slate-900;
       }
       &-login {
+        @apply rounded-md bg-green-500 px-4 py-2 text-slate-900 hover:bg-yellow-800;
+      }
+      &-logout {
         @apply rounded-md bg-red-500 px-4 py-2 text-slate-900 hover:bg-yellow-800;
       }
     }

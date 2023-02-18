@@ -21,7 +21,7 @@ const brand = ref('🏢Not Totally Fake Company Directory🐱‍👤')
           >
         </i>
         <div v-if="isAuthenticated">
-          <RouterLink :to="{ name: 'Home' }" href="#" class="menu-item">Settings</RouterLink>
+          <RouterLink :to="{ name: 'Settings' }" href="#" class="menu-item">Settings</RouterLink>
           <button href="#" class="menu-logout" @click="logout">Logout</button>
         </div>
         <div v-else>

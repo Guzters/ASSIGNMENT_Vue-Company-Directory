@@ -22,7 +22,7 @@ const router = createRouter({
 
 router.beforeEach((to) => {
   if (to.meta.requiresAuth && !isAuthenticated.value) {
-    return { name: 'Login' }
+    return { name: 'Login', query: { redirect: to.fullPath } }
   }
 })
 

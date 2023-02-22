@@ -17,7 +17,7 @@ const brand = ref(import.meta.env.VITE_APP_NAME)
         <i v-show="isAuthenticated" class="px-2 py-4">
           Welcome
           <strong
-            ><i>{{ user.name }}</i></strong
+            ><i>{{ user?.name }}</i></strong
           >
         </i>
         <div v-if="isAuthenticated">

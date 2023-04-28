@@ -6,7 +6,7 @@ import MainSearch from '@/components/MainSearch.vue'
 import MainCards from '@/components/MainCards.vue'
 import MainPagination from '@/components/MainPagination.vue'
 
-import useAPI from '@/composables/useAPI'
+import useAPI from '@/composables/useApi'
 
 const { getEmployees, loading } = useAPI()
 

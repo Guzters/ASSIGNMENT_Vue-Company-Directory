@@ -3,7 +3,7 @@
 import { ref } from 'vue'
 import { faker } from '@faker-js/faker'
 
-import useAPI from '@/composables/useAPI'
+import useAPI from '../composables/useApi'
 const { getDepartment } = useAPI()
 
 const selectCard = () => {

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { ref } from 'vue'
 import axios from 'axios'
 
@@ -21,7 +20,7 @@ const getEmployees = async () => {
   const { data, headers } = await api.get('/api/employees', {
     params: {
       page: activePage.value,
-      pageSize: pageSize.value,
+      size: pageSize.value,
     },
   })
   employees.value = data

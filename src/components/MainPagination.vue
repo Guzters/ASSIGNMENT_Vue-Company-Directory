@@ -1,5 +1,5 @@
 <script setup>
-import useAPI from '@/composables/useAPI'
+import useAPI from '../composables/useApi'
 
 const { activePage, pages, getEmployees } = useAPI()
 
